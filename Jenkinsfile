@@ -24,6 +24,7 @@ pipeline {
                 bat 'terraform init'
                 //bat 'terraform plan -out=plan'
                 bat 'terraform apply'
+                bat 'yes'
             }
         }
     }
