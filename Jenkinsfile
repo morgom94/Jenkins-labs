@@ -23,7 +23,7 @@ pipeline {
                 echo '\n\nInitializing... \nLooking for *.tf files'
                 bat 'terraform init'
                 //bat 'terraform plan -out=plan'
-                bat 'terraform apply -input=false'
+                bat 'terraform apply -input=false -auto-approve'
             }
         }
     }
