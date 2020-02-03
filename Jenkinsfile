@@ -22,8 +22,8 @@ pipeline {
             {
                 echo '\n\nInitializing... \nLooking for *.tf files'
                 bat 'terraform init'
-                //bat 'terraform plan -out=plan'
-                bat 'terraform apply -input=false -var=yes'
+                bat 'terraform plan -out=plan'
+                bat 'terraform apply -input=false'
             }
         }
     }
