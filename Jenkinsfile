@@ -3,7 +3,7 @@ pipeline {
     stages {
         stage('checkout') {
             steps {
-                git branch: 'master', url: 'https://github.com/morgom94/gitops-terraform-jenkins'
+                git branch: 'master', url: 'https://github.com/morgom94/Terraform-labs' //'https://github.com/morgom94/gitops-terraform-jenkins'
             }
         }
     stage('Set Terraform path') {
