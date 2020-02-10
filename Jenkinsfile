@@ -24,6 +24,8 @@ pipeline {
                 bat 'terraform init'
                 bat 'terraform plan -out=plan'
                 bat 'terraform apply plan'
+                echo 'bye bye'
+                bat 'terraform destroy'
             }
         }
     }
