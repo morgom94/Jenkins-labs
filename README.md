@@ -1,3 +1,6 @@
 # Terraform-labs
-
-Lab files for https://aka.ms/citadel/terraform workshop.
+Using Terraform to:
+Initializing
+Planning
+Applying.
+to move infrastructure from local machine to a remote environment with shared access
