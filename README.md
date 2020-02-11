@@ -2,5 +2,5 @@
 Using Terraform to:
 Initializing
 Planning
-Applying.
+Applying
 to move infrastructure from local machine to a remote environment with shared access
