@@ -1,37 +1,34 @@
 pipeline {
     agent any
+
+    parameters {
+        booleanParam(defaultValue: true, description: 'trying out a parameter', name: 'userFlag')
+        string(defaultValue: "TEST", description: 'What environment?', name: 'userFlag2')
+        choice(choices: ['US-EAST-1', 'US-WEST-2'], description: 'What AWS region?', name: 'region')
+   
+    }
+    
+    triggers {
+        upstream(upstreamProjects: "1Regression", threshold: hudson.model.Result.SUCCESS)
+    }
+
     stages {
-        stage('checkout') {
+        stage('Hello') {
             steps {
-                git branch: 'master', url: 'https://github.com/morgom94/Terraform-labs'
+                echo 'Hello World'
             }
         }
-        stage('Set Terraform path') {
+        stage("Parameters") {
             steps {
-                script {
-                    def tfHome = tool name: 'Terraform'
-                    env.PATH = "${tfHome}:${env.PATH}"
-                    echo "env.PATH"
-                }
-                echo '\nPrinting the Terraform version'
-                bat 'terraform --version'
+                echo "flag: ${params.userFlag}"
+                echo "flag: ${params.userFlag2}"
+                echo "flag: ${params.region}"
             }
         }
-        stage('Initializing') {
+        /*stage ('Starting downstream job ') {
             steps {
-                    echo '\n\nLooking for *.tf files'
-                    bat 'terraform init'
+                build job: 'Terraform Output Var'
             }
-        }
-        stage('Planning') {
-            steps {
-                bat 'terraform plan'
-            }
-        }
-        stage('Applying') {
-            steps {
-                bat 'terraform apply'
-            }
-        }
+        }*/
     }
 }
