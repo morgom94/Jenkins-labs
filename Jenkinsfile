@@ -25,10 +25,5 @@ pipeline {
                 echo "flag: ${params.region}"
             }
         }
-        /*stage ('Starting downstream job ') {
-            steps {
-                build job: 'Terraform Output Var'
-            }
-        }*/
     }
 }
