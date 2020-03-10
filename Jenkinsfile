@@ -7,7 +7,6 @@ pipeline {
         choice(choices: ['US-EAST-1', 'US-WEST-2'], description: 'What AWS region?', name: 'region')
    
     }
-    
     /*triggers {
         upstream(upstreamProjects: "1Regression", threshold: hudson.model.Result.SUCCESS)
     }*/
@@ -25,10 +24,5 @@ pipeline {
                 echo "flag: ${params.region}"
             }
         }
-        /*stage ('Starting downstream job ') {
-            steps {
-                build job: 'Terraform Output Var'
-            }
-        }*/
     }
 }
