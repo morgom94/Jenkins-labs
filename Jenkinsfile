@@ -12,7 +12,7 @@ pipeline {
     }*/
 
     stages {
-        stage('Hello from Master Branch') {
+        stage('Hello from the Master Branch') {
             steps {
                 echo 'Hello World this is the Master Branch'
             }
