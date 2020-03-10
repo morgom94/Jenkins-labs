@@ -3,19 +3,19 @@ pipeline {
 
     parameters {
         booleanParam(defaultValue: true, description: 'trying out a parameter', name: 'userFlag')
-        string(defaultValue: "TEST", description: 'What environment?', name: 'userFlag2')
+        string(defaultValue: "MASTER", description: 'What environment?', name: 'userFlag2')
         choice(choices: ['US-EAST-1', 'US-WEST-2'], description: 'What AWS region?', name: 'region')
    
     }
     
-    triggers {
+    /*triggers {
         upstream(upstreamProjects: "1Regression", threshold: hudson.model.Result.SUCCESS)
-    }
+    }*/
 
     stages {
-        stage('Hello') {
+        stage('Hello from Master Branch') {
             steps {
-                echo 'Hello World'
+                echo 'Hello World this is the Master Branch'
             }
         }
         stage("Parameters") {
