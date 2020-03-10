@@ -3,7 +3,7 @@ pipeline {
 
     parameters {
         booleanParam(defaultValue: true, description: 'trying out a parameter', name: 'userFlag')
-        string(defaultValue: "TEST", description: 'What environment?', name: 'userFlag2')
+        string(defaultValue: "SECOND", description: 'What environment?', name: 'userFlag2')
         choice(choices: ['US-EAST-1', 'US-WEST-2'], description: 'What AWS region?', name: 'region')
    
     }
@@ -13,7 +13,7 @@ pipeline {
     }*/
 
     stages {
-        stage('Hello') {
+        stage('Hello from Second Branch') {
             steps {
                 echo 'Hello World, this is the Jenkinsfile from second branch'
             }
