@@ -8,14 +8,14 @@ pipeline {
    
     }
     
-    triggers {
+    /*triggers {
         upstream(upstreamProjects: "1Regression", threshold: hudson.model.Result.SUCCESS)
-    }
+    }*/
 
     stages {
         stage('Hello') {
             steps {
-                echo 'Hello World'
+                echo 'Hello World, this is the Jenkinsfile from second branch'
             }
         }
         stage("Parameters") {
