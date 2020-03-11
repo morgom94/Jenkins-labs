@@ -3,6 +3,7 @@ pipeline {
     stages {
         stage('Clone Repository') {
             steps {
+                bat 'rm -rf my-app'
                 bat 'git clone https://github.com/pknowledge/my-app.git'
                 bat 'mvn clean -f my-app'
                 echo ''
