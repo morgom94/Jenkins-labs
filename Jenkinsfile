@@ -7,10 +7,6 @@ pipeline {
         choice(choices: ['US-EAST-1', 'US-WEST-2'], description: 'What AWS region?', name: 'region')
    
     }
-    
-    /*triggers {
-        upstream(upstreamProjects: "1Regression", threshold: hudson.model.Result.SUCCESS)
-    }*/
 
     stages {
         stage('Hello from Second Branch') {
