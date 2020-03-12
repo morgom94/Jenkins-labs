@@ -9,12 +9,12 @@ pipeline {
                 echo ''
             }
         }
-        stage("Testing") {
+        stage("Testing...") {
             steps {
                 bat 'mvn test -f my-app'
             }
         }
-        stage("Deploying"){
+        stage("Deploying..."){
             steps{
                 bat 'mvn package -f my-app'
             }
