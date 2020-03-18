@@ -6,6 +6,6 @@ def call(Map stageParams, String name = 'softtekian') {
         extensions: [], 
         submoduleCfg: [], 
         userRemoteConfigs: [[url: 'https://github.com/morgom94/Jenkins-labs.git']]
-        echo "Hello, ${name}."
     ])
+    echo "Hello, ${name}."
 }
