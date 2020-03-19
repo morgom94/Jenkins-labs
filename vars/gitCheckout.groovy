@@ -12,7 +12,6 @@ def call(Map stageParams, String name = 'softtekian', Integer age= 25) {
         parameters: [booleanParam(name: 'userFlag', value: true), 
                      string(name: 'CHOICE', value: 'US-EAST-1'), 
                      text(name: 'TEXT', value: '''Hello there'''), 
-                     password(description: 'A secret password', name: 'PASSWORD', value: <object of type hudson.util.Secret>), 
                      string(name: 'STRING', value: 'Library example')
                     ]
     
